@@ -128,9 +128,9 @@ def main():
         # Handle Input Events
         for event in pygame.event.get():
             if event.type == QUIT:
-                going = False
+                run  = False
             elif event.type == KEYDOWN and event.key == K_ESCAPE:
-                going = False
+                run = False
             elif event.type == MOUSEBUTTONDOWN:
                     if crosshair.shoot(target) == 1:
                         target.move()
