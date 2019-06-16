@@ -15,7 +15,7 @@ class Crosshair(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.dict = {}
         for i in range(0, 5):
-            self.dict["crosshair" + str(i)] = image_load("crosshair_" + str(i))
+            self.dict["crosshair" + str(i)] = pygame.transform.scale(image_load("crosshair_" + str(i)), (40,40))
         self.image = self.dict.get("crosshair0")
         self.rect = self.image.get_rect()
         self.rect.center = (234, 30)
@@ -135,6 +135,8 @@ def main():
                     if crosshair.shoot(target) == 1:
                         target.move()
                         score.add()
+                    else: 
+                        target.move()
 
             elif event.type == MOUSEBUTTONUP:
                 pass
