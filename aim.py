@@ -92,6 +92,9 @@ class Score(pygame.sprite.Sprite):
     def add(self):
         self.score += 1 
 
+    def remove(self):
+        self.score -= 1
+
 
 def main():
     """this function is called when the program starts.
@@ -137,6 +140,7 @@ def main():
                         score.add()
                     else: 
                         target.move()
+                        score.remove()
 
             elif event.type == MOUSEBUTTONUP:
                 pass
