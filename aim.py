@@ -93,7 +93,8 @@ class Score(pygame.sprite.Sprite):
         self.score += 1 
 
     def remove(self):
-        self.score -= 1
+        if self.score != 0:
+            self.score -= 1
 
 
 def main():
